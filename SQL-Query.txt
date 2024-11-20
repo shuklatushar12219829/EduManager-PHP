@@ -1,0 +1,74 @@
+CREATE TABLE students (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ name varchar(255) NOT NULL,
+ username varchar(255) NOT NULL,
+ password varchar(255) NOT NULL,
+ branch varchar(255) NOT NULL,
+ PRIMARY KEY (id),
+ UNIQUE KEY username (username),
+ UNIQUE KEY username_2 (username),
+ UNIQUE KEY username_3 (username)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE student_queries (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ student_id int(11) DEFAULT NULL,
+ query_text text DEFAULT NULL,
+ created_at timestamp NOT NULL DEFAULT current_timestamp(),
+ status enum('open','closed') DEFAULT 'open',
+ PRIMARY KEY (id),
+ KEY student_id (student_id),
+ CONSTRAINT student_queries_ibfk_1 FOREIGN KEY (student_id) REFERENCES students (id)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE todo (
+ user varchar(255) NOT NULL,
+ assignment text NOT NULL,
+ due_date datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE queries (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ student_username varchar(255) DEFAULT NULL,
+ query_text text NOT NULL,
+ response_text text DEFAULT NULL,
+ created_at timestamp NOT NULL DEFAULT current_timestamp(),
+ responded_at timestamp NULL DEFAULT NULL,
+ PRIMARY KEY (id),
+ KEY student_username (student_username),
+ CONSTRAINT queries_ibfk_1 FOREIGN KEY (student_username) REFERENCES students (username) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE internships (
+ intership_id int(11) NOT NULL AUTO_INCREMENT,
+ name varchar(255) NOT NULL,
+ branch varchar(50) NOT NULL,
+ company_name varchar(255) NOT NULL,
+ location varchar(255) NOT NULL,
+ pre_requisites text NOT NULL,
+ link varchar(255) NOT NULL,
+ PRIMARY KEY (intership_id)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE admin (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ name varchar(50) NOT NULL,
+ username varchar(50) NOT NULL,
+ password varchar(255) NOT NULL,
+ created_at timestamp NOT NULL DEFAULT current_timestamp(),
+ PRIMARY KEY (id),
+ UNIQUE KEY username (username)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE admin_replies (
+ id int(11) NOT NULL AUTO_INCREMENT,
+ query_id int(11) DEFAULT NULL,
+ admin_id int(11) DEFAULT NULL,
+ reply_text text DEFAULT NULL,
+ created_at timestamp NOT NULL DEFAULT current_timestamp(),
+ PRIMARY KEY (id),
+ KEY query_id (query_id),
+ KEY admin_id (admin_id),
+ CONSTRAINT admin_replies_ibfk_1 FOREIGN KEY (query_id) REFERENCES student_queries (id),
+ CONSTRAINT admin_replies_ibfk_2 FOREIGN KEY (admin_id) REFERENCES admin (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci

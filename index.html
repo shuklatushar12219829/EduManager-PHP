@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+<title>Welcome!</title>
+<link rel="stylesheet" href="external_css_signup.css">
+<style>
+</style>
+</head>
+<body>
+<div class="centered">
+    <center><img src="logo4.png" alt="CMRCET" width="600px"></center>
+    <center><p class="enter">ENTER STUDENT CREDENTIALS</p></center>
+<div class="login_box">
+    
+<form name="f1" action = "process.php"  method = "POST">  
+            <p>  
+                <label> UserName:</label>  
+                <input type = "text" placeholder="Enter username" id ="user" name  = "user" />  
+            </p>  
+            <p>  
+                <label> Password:</label>  
+                <input type = "password" placeholder="Enter password" id ="pass" name  = "pass" />  
+            </p>  
+            <p>  
+                <label> Branch:</label>  
+                <select name="brnch" id="brnch">
+                    <option value="CSE">CSE</option>
+                    <option value="CSM">CSM</option>
+                    <option value="AIML">AIML</option>
+                    <option value="CSD">CSD</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="CIVIL">CIVIL</option>
+                    <option value="MECH">MECH</option>
+                  </select>
+            <p>     
+                <input type =  "submit" id = "btn" value = "LOGIN" />  
+            </p>
+            
+            
+</form>
+</div>
+<div class="text">
+ <p>Don't have an account? <a href="signup.php">SIGNUP</a></p>
+ <p><a href="admin_login.html">ADMIN</a></p>
+</div>
+</div>
+</body>
+</html>

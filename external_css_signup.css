@@ -1,0 +1,62 @@
+.login_box{
+  border-radius: 30px;
+  width: 500px;
+  padding: 20px;
+  border: 5px solid #464f41;
+  background-color: #56776c;
+  color:white;
+}
+.logout
+{
+    text-align:right;
+
+    
+}
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text{
+    text-align:center;
+    color: white;
+    
+}
+#btn{
+    border-radius: 5px;
+    background-color:#464f41;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+}
+#user,#pass,#name,#brnch,#newpass{
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 20px;
+}
+
+body{
+    background-color:#bfcba8;
+    color:#464f41;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 25px;
+    background-image: url(bg_cool.jpg);
+    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed; 
+}
+a{
+    color:white;
+}
+.enter{
+    font-weight: bold;
+    font-size: 30px;
+    color:white;
+}    

@@ -1,0 +1,31 @@
+body{
+    background-color:#bfcba8;
+    color:#464f41;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+#assgn,#dt{
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+#btn,#del{
+    border-radius: 5px;
+    background-color:#464f41;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+a{
+    text-decoration:none;
+    color:#464f41
+}
+.works{
+  width: 100%;
+  padding:20px;
+  background-color: #56776c;
+  color:white;
+  margin-left:0;
+}
